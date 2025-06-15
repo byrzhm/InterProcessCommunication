@@ -28,7 +28,7 @@ int main() {
 
   memcpy(static_cast<char *>(shm_ptr) + offset, &value_len, sizeof(value_len));
   offset += sizeof(value_len);
-  memcpy(static_cast<char *>(shm_ptr) + offset + sizeof(value_len), value, value_len);
+  memcpy(static_cast<char *>(shm_ptr) + offset, value, value_len);
   offset += value_len;
 
   std::cout << "Stored '" << key << "' with value '" << value << "' in shared memory." << std::endl;
